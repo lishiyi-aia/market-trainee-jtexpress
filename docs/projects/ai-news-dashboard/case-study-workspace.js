@@ -4,11 +4,11 @@
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
   const icon = (name) => `<i data-lucide="${name}" aria-hidden="true"></i>`;
   const steps = [
-    { id: 'overview', title: '用户洞察', sub: '反馈与价格问卷', icon: 'scan-search', sections: ['overview'] },
-    { id: 'campaigns', title: '活动推广', sub: '线上拉新与线下展示', icon: 'route', sections: ['campaigns'] },
-    { id: 'materials', title: '品牌内容', sub: '卖点、物料与A/B测试', icon: 'panels-top-left', sections: ['materials', 'content-test'] },
-    { id: 'channels', title: '达人与渠道', sub: '内容与受众匹配', icon: 'network', sections: ['channels'] },
-    { id: 'research', title: 'AI看板复盘', sub: '监测、预算与下一轮调整', icon: 'chart-no-axes-combined', sections: ['sop', 'results', 'research'] }
+    { id: 'overview', title: '信息筛选', sub: '行业、竞品与评论核实', icon: 'scan-search', sections: ['overview'] },
+    { id: 'campaigns', title: '传播准备', sub: '主题、功能与活动信息', icon: 'route', sections: ['campaigns'] },
+    { id: 'materials', title: '稿件与资料', sub: '事实、口径与宣传物料', icon: 'panels-top-left', sections: ['materials', 'content-test'] },
+    { id: 'channels', title: '协作发布', sub: '博主审核、素材与排期', icon: 'network', sections: ['channels'] },
+    { id: 'research', title: 'AI监测复盘', sub: '信息反馈与下一轮修订', icon: 'chart-no-axes-combined', sections: ['sop', 'results', 'research'] }
   ];
   const sections = Object.fromEntries(steps.flatMap(step => step.sections).map(id => [id, document.getElementById(id)]));
   const main = $('main');
@@ -21,7 +21,7 @@
       <div class="workflow-tabs" role="tablist" aria-label="项目工作流程" aria-orientation="vertical">
         ${steps.map((step, index) => `<button type="button" role="tab" id="step-${step.id}" aria-controls="panel-${step.id}" aria-selected="${index === 0}" tabindex="${index === 0 ? 0 : -1}" data-step="${index}"><span class="step-number">0${index + 1}</span><span class="step-text"><strong>${step.title}</strong><small>${step.sub}</small></span>${icon(step.icon)}</button>`).join('')}
       </div>
-      <div class="rail-ownership"><span>我的职责</span><p>用户洞察 · 卖点提炼<br>品牌内容 · 活动执行<br>达人协作 · AI看板复盘</p></div>
+      <div class="rail-ownership"><span>我的职责</span><p>信息归类 · 事实核对<br>传播稿件 · 媒体资料<br>协作发布 · AI监测复盘</p></div>
       <p class="rail-note">内部用户明细、达人身份与商务报价不公开。</p>
     </aside>
     <div class="workspace-body">
@@ -45,7 +45,7 @@
       if (id === 'content-test' || id === 'sop') {
         const details = document.createElement('details');
         details.className = 'evidence-drawer';
-        details.innerHTML = `<summary>${icon(id === 'sop' ? 'chart-no-axes-combined' : 'split')}<span>${id === 'sop' ? 'AI辅助运营看板' : 'A/B测试与内容优化'}<small>${id === 'sop' ? '模拟数据 · 方法演示' : '版本示意 · 非历史投放截图'}</small></span>${icon('chevron-down')}</summary>`;
+        details.innerHTML = `<summary>${icon(id === 'sop' ? 'chart-no-axes-combined' : 'split')}<span>${id === 'sop' ? 'AI辅助传播分析看板' : 'A/B测试与内容优化'}<small>${id === 'sop' ? '模拟数据 · 方法演示' : '版本示意 · 非历史投放截图'}</small></span>${icon('chevron-down')}</summary>`;
         if (id === 'sop') {
           details.classList.add('tool-drawer');
           details.open = true;
@@ -65,21 +65,21 @@
   $('.nav-links').innerHTML = `<a href="#overview">项目工作</a><a href="#materials">宣传作品</a><a href="#results">项目结果</a><a href="operations_dashboard.html">复盘工具 ${icon('arrow-up-right')}</a>`;
   $('.snapshot .metric-strip').innerHTML = `
     <a class="summary-stat" href="#materials"><strong>100<span>+</span></strong><span>内容输出<small>公众号 / 小红书 / 社群</small></span>${icon('arrow-up-right')}</a>
-    <a class="summary-stat" href="#results"><strong>+50<span>%</span></strong><span>新增注册<small>投放期较前一周</small></span>${icon('arrow-up-right')}</a>
+    <a class="summary-stat" href="#results"><strong>+50<span>%</span></strong><span>新增注册<small>投放期较前一期</small></span>${icon('arrow-up-right')}</a>
     <a class="summary-stat" href="#research"><strong><small>约</small>+15<span>%</span></strong><span>首次专题创建率<small>相对提升 · 期间整体结果</small></span>${icon('arrow-up-right')}</a>`;
   $('h1').innerHTML = 'AI资讯产品<span>YouNews</span>';
-  $('h1').insertAdjacentHTML('afterend', '<p class="project-subtitle">用户洞察与品牌推广</p>');
-  $('#overview .kicker').textContent = '01 / USER UNDERSTANDING';
-  $('#overview h2').textContent = '把用户洞察转成卖点与沟通';
-  $('#overview .section-lead').textContent = '整理用户反馈与价格问卷，分析需求、付费意愿与价格接受度，提炼产品卖点；按了解、尝试、使用阶段安排内容和活动触点，再将推广反馈带回下一轮准备。';
-  $('#campaigns .kicker').textContent = '02 / ACQUISITION CAMPAIGN';
-  $('#campaigns h2').textContent = '让产品价值接上体验行动';
-  $('#channels .kicker').textContent = '04 / CREATORS & CHANNELS';
-  $('#channels h2').textContent = '用渠道与达人触达合适受众';
-  $('#channels .section-lead').textContent = '累计输出100+条公众号、小红书及社群内容；根据粉丝画像、内容相关性和互动表现筛选金融、AI领域博主，协助准备推广内容并跟踪上线表现。';
+  $('h1').insertAdjacentHTML('afterend', '<p class="project-subtitle">品牌传播与媒体信息分析</p>');
+  $('#overview .kicker').textContent = '01 / MEDIA INFORMATION & VERIFICATION';
+  $('#overview h2').textContent = '把信息信号转成传播重点';
+  $('#overview .section-lead').textContent = '跟踪行业报道、竞品内容与用户评论，分类并核实重点信息；围绕产品更新和科技活动整理主题、事实与常见疑问，为稿件、FAQ及活动宣传提供依据。';
+  $('#campaigns .kicker').textContent = '02 / COMMUNICATION PLANNING';
+  $('#campaigns h2').textContent = '把功能与案例讲成易懂的信息';
+  $('#channels .kicker').textContent = '04 / CHANNEL COORDINATION & PUBLISHING';
+  $('#channels h2').textContent = '核对版本，协调渠道与博主发布';
+  $('#channels .section-lead').textContent = '累计输出100+条公众号、小红书及社群内容；对接渠道需求、素材与排期，协助合作博主沟通及内容审核，核对品牌口径并跟踪上线与修改反馈。';
   $('#results .kicker').textContent = '05 / RESULTS & REVIEW';
   $('#results h2').textContent = '把传播表现接到注册与首次使用';
-  $('#results .section-lead').textContent = '以下为本人提供的实习期汇总结果。结合AI看板、内容表现与用户反馈，优化渠道预算，调整卖点、教程和活动准备，持续监测下一轮推广。';
+  $('#results .section-lead').textContent = '以下为实习期汇总结果。将媒体与评论反馈、A/B比较及可追踪传播数据汇入AI看板复盘，形成稿件、FAQ、素材与发布安排的下一轮修改项。';
   $('#research .section-head').hidden = true;
   $('#research .review-journey').hidden = true;
 
@@ -182,7 +182,7 @@
   }
   const needs = [
     ['信息太多，哪些值得持续关注？', '先从信息分散、反复搜索的场景切入，让用户判断产品是否对自己有用。', '用“信息焦虑自救计划”介绍资讯追踪的用途，再接上产品功能说明。', '了解产品，进入体验。', '03-awareness.jpg', '信息焦虑自救计划'],
-    ['感兴趣，但为什么现在就试？', '结合付费意愿与价格接受度，先讲清可体验内容、参与方式与权益，让用户有判断价值的依据。', '准备新用户体验物料，并接上功能说明与参与入口。', '进入产品，开始尝试。', '04-activation.jpg', '新用户专属福利'],
+    ['感兴趣，但为什么现在就试？', '先核对可体验的功能、参与方式与活动权益，再组织表达，让受众有判断价值的依据。', '准备新用户体验物料，并接上功能说明与参与入口。', '进入产品，开始尝试。', '04-activation.jpg', '新用户专属福利'],
     ['注册之后，第一步该做什么？', '注册并不等于真正用起来；需要让用户知道如何完成第一次专题创建。', '用创建专题的功能图说明操作入口，结合社群答疑与体验问卷收集问题。', '创建专题，留下使用反馈。', '08-topic-creation.png', '创建专题']
   ];
   selectableTabs($$('[data-need]'), index => {
@@ -199,8 +199,8 @@
 
   const campaignRoute = document.createElement('div');
   campaignRoute.className = 'campaign-flow';
-  campaignRoute.innerHTML = `<div class="campaign-flow-label"><span>产品上新与体验推广</span><span>活动路径 · 按实际工作整理</span></div><ol>${[
-    ['看见价值', '上新与场景海报', 'megaphone'], ['产生兴趣', '功能与体验说明', 'mouse-pointer-2'], ['开始使用', '专题创建与答疑', 'square-plus'], ['反馈问题', '社群交流与问卷', 'messages-square']
+  campaignRoute.innerHTML = `<div class="campaign-flow-label"><span>产品更新与传播准备</span><span>从信息到发布 · 工作思路整理</span></div><ol>${[
+    ['确定主题', '产品更新与反馈重点', 'megaphone'], ['准备资料', '稿件、案例与FAQ', 'mouse-pointer-2'], ['核对口径', '产品、设计与运营确认', 'square-plus'], ['发布跟进', '渠道排期与反馈记录', 'messages-square']
   ].map(([name, detail, symbol], i) => `<li>${icon(symbol)}<span>0${i + 1}</span><h3>${name}</h3><p>${detail}</p></li>`).join('')}</ol><a class="evidence-jump" href="#materials">查看对应宣传物料 ${icon('arrow-right')}</a>`;
   $('#campaigns .section-head').after(campaignRoute);
   const campaignTabs = document.createElement('div');
@@ -208,7 +208,7 @@
   campaignTabs.setAttribute('role', 'tablist');
   campaignTabs.setAttribute('aria-label', '活动类型');
   const campaignBriefs = $$('.campaign-brief');
-  campaignTabs.innerHTML = ['线上拉新 · 独立设计', '线下活动 · 参与执行'].map((title, i) => `<button type="button" role="tab" id="campaign-tab-${i}" aria-controls="campaign-detail-${i}" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}">${title}</button>`).join('');
+  campaignTabs.innerHTML = ['线上传播 · 文案与素材', '科技活动 · 宣传与执行'].map((title, i) => `<button type="button" role="tab" id="campaign-tab-${i}" aria-controls="campaign-detail-${i}" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}">${title}</button>`).join('');
   campaignRoute.before(campaignTabs);
   campaignBriefs.forEach((brief, i) => {
     brief.id = `campaign-detail-${i}`;
@@ -226,15 +226,15 @@
 
   const materials = sections.materials;
   materials.classList.add('section');
-  $('h3', materials).outerHTML = '<div class="section-head"><div><p class="kicker">03 / BRAND CONTENT & CREATIVE</p><h2>把卖点转成内容与行动指引</h2></div><p class="section-lead">从产品介绍、功能教程到场景案例，再接上体验、答疑与反馈；让卖点回应用户需求，每张物料都有明确的下一步。</p></div>';
+  $('h3', materials).outerHTML = '<div class="section-head"><div><p class="kicker">03 / RELEASE & MEDIA MATERIALS</p><h2>稿件与配图，使用同一套事实口径</h2></div><p class="section-lead">参与新闻稿与媒体资料初稿撰写，整理事实、案例和配图，校对品牌口径；保留本人制作的原海报，展示文案、功能说明与行动指引如何相互对应。</p></div>';
   $('.materials-intro').hidden = true;
   const figures = $$('.campaign-material', materials);
   const materialNotes = [
-    ['让用户知道 YouNews 是什么。', '提炼产品定位，完成海报文案与视觉制作。', '了解功能，进入产品。'],
+    ['让用户知道 YouNews 是什么。', '核对产品定位与功能范围，完成海报文案与视觉制作。', '了解功能，进入产品。'],
     ['让用户知道如何开始追踪。', '突出输入话题与创建专题的操作入口。', '完成首次专题创建。'],
     ['讲清不同解读方式的用途。', '并列展示概览、大白话与深度解读。', '选择适合自己的阅读方式。'],
     ['说明产品在日常阅读中的用途。', '用日报界面展示专题更新如何汇总。', '关注专题，查看持续更新。'],
-    ['从信息分散、反复搜索的困扰切入。', '将资讯追踪功能转化为场景化表达。', '判断是否适合自己，了解产品。'],
+    ['从信息分散、反复搜索的困扰切入。', '将资讯追踪功能转化为场景化表达，核对功能边界。', '判断是否适合自己，了解产品。'],
     ['给感兴趣的用户一个体验理由。', '整理体验内容、活动权益与参与说明。', '按活动说明参与体验。'],
     ['为使用中的问题提供交流入口。', '讲清答疑、功能体验与社群支持。', '进入社群，交流使用问题。'],
     ['邀请体验用户反馈问题与建议。', '整理参与对象、填写方式与奖励说明。', '填写体验问卷。']
@@ -278,9 +278,9 @@
 
   const channelMap = $('.channel-map');
   const channels = [
-    ['公众号', '完整讲清产品价值', '产品介绍、功能教程与场景案例', '围绕产品卖点、适用场景与操作步骤组织内容，承接用户从了解产品到开始体验。', '阅读与互动，以及用户对产品价值和使用方式的反馈。'],
-    ['小红书', '从具体使用场景切入', '场景选题、标题与首图', '围绕资讯分散、反复搜索等使用问题组织内容，调整标题与文案表达。', '内容阅读、收藏与评论中的需求信号。'],
-    ['社群', '把关注接到实际使用', '内容分发、答疑与反馈收集', '分发相关内容，结合交流中的问题补充教程和FAQ。', '能够追踪的访问与注册，以及后续使用问题。']
+    ['公众号', '完整讲清产品价值', '产品介绍、功能教程与场景案例', '围绕产品介绍、已核对案例及操作步骤组织内容，对齐稿件与配图版本后发布。', '阅读与互动，以及用户对产品价值和使用方式的反馈。'],
+    ['小红书', '从具体使用场景切入', '场景选题、标题与首图', '从资讯分散等使用问题组织选题，核对标题、首图与功能事实，再跟踪评论中的疑问。', '内容阅读、收藏与评论中的需求信号。'],
+    ['社群', '把关注接到实际使用', '内容分发、答疑与反馈收集', '分发已核对的内容，记录重复问题与修改反馈，补充教程和FAQ后再次观察。', '能够追踪的访问与注册，以及后续使用问题。']
   ];
   channelMap.innerHTML = `<div class="channel-select" role="tablist" aria-label="分发渠道">${channels.map((item, i) => `<button type="button" id="channel-${i}" role="tab" aria-controls="channel-detail" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}"><span>0${i + 1}</span>${item[0]}${icon('arrow-right')}</button>`).join('')}</div><div id="channel-detail" role="tabpanel" aria-labelledby="channel-0" tabindex="0"><span class="channel-content-label"></span><h3></h3><dl><div><dt>内容处理</dt><dd data-channel-action></dd></div><div><dt>发布后看</dt><dd data-channel-review></dd></div></dl></div>`;
   function selectChannel(index) {
@@ -311,7 +311,7 @@
   const loop = document.createElement('a');
   loop.className = 'review-loop';
   loop.href = '#overview';
-  loop.innerHTML = `${icon('corner-up-left')}<span><strong>把复盘带回下一轮推广</strong><small>监测与反馈 → 卖点 / 内容 / 预算 / 活动调整 → 再观察</small></span>${icon('arrow-right')}`;
+  loop.innerHTML = `${icon('corner-up-left')}<span><strong>把复盘带回下一轮稿件与资料</strong><small>媒体与评论 → 核实 / 稿件 / FAQ / 排期调整 → 发布后再观察</small></span>${icon('arrow-right')}`;
   $('#research').append(loop);
 
   if (window.lucide) window.lucide.createIcons({ attrs: { 'stroke-width': 1.6, 'aria-hidden': 'true' } });

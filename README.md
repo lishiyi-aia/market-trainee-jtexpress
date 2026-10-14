@@ -1,13 +1,13 @@
-# 李世怡 · 市场培训生作品集
+# 李世怡 · 极兔集团品牌管理管培生作品集
 
-独立复制自 https://lishiyi-aia.github.io/business-assistant-qinshi/ ，保留原站版式、3D 场景与交互。原网站不作修改。
+独立复制自 https://lishiyi-aia.github.io/market-trainee-finetoday/ ，保留原站版式、3D 场景、图片与交互。原网站及仓库不作修改。
 
-新站：https://lishiyi-aia.github.io/market-trainee-finetoday/
+新站：https://lishiyi-aia.github.io/market-trainee-jtexpress/
 
-- AI教育产品：用户洞察 → 产品内容 → 高校推广及市场合作 → 反馈迭代。
-- AI资讯产品：需求与价格调研 → 内容/达人/活动推广 → AI数据看板 → 投放复盘。
-- ZUS Coffee：消费者与新品调研 → 社媒内容 → 线上首发/门店传播 → 上市复盘。
+- AI资讯产品：信息收集与监测 → 品牌主题 → 稿件与媒体资料 → 协作发布 → AI分析与传播复盘 → 修订选题与沟通。
+- AI教育产品：需求与反馈归类 → 信息摘要 → 场景案例与活动资料 → 宣讲体验与跨境协作 → 反馈复盘 → 资料修订及后续试点。
+- ZUS Coffee：马来西亚受众与文化语境 → 品牌卖点 → 英文内容 → 社媒与门店传播 → 每周复盘 → 调整本地化表达。
 
-履历真源为 `web/src/data/resumeSnapshot.json`，对应2026年10月14日市场培训生简历。项目简介保持精简，点击项目名称、入口文字或封面直接进入完整案例，查看执行和复盘路径。示意内容与历史结果分别标注。
+履历真源为 `web/src/data/resumeSnapshot.json`，逐项对应2026年10月15日用户提供的极兔快递定稿简历。三个项目是过往实习的工作案例，不是极兔实习项目。项目简介保持精简，点击项目名称、入口文字或封面直接进入完整案例，查看执行和复盘路径。工作方法示例与实习汇总成果分别标注。
 
 `web/` 为独立源文件；`docs/` 为 GitHub Pages 发布文件。

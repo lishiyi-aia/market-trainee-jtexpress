@@ -56,41 +56,41 @@ export const WORKS: Record<WorkLanguage, WorksLang> = {
     "countLabel": (n: number) => `${n} 个项目`,
     "sections": [
       {
-        "id": "project-2",
+        "id": "project-1",
         "no": "01",
-        "title": "市场推广与活动执行",
-        "tagline": "用户洞察｜产品传播｜活动物料｜市场合作",
+        "title": "品牌传播与媒体信息分析",
+        "tagline": "传播策划｜稿件资料｜媒体监测｜AI复盘",
         "items": [
           {
-            "name": "AI教育产品市场推广与活动执行",
-            "meta": "AI Education Product Marketing & Campaign Execution",
-            "slug": "ai-education-partnership",
-            "link": `${import.meta.env.BASE_URL}projects/ai-education-partnership/case_study.html`,
+            "name": "AI资讯产品品牌传播与媒体信息分析",
+            "meta": "Brand Communication & Media Analysis",
+            "slug": "ai-news-dashboard",
+            "link": `${import.meta.env.BASE_URL}projects/ai-news-dashboard/case_study.html`,
             "tags": [
-              "用户洞察：整理100+条反馈，识别需求与使用障碍",
-              "产品传播：输出30+篇指南、FAQ、教程及场景案例",
-              "推广落地：高校活动与物料准备，东南亚合作跟进",
-              "反馈迭代：10余项建议，期间核心功能使用率提升30%"
+              "传播策划：产品更新、用户案例与活动信息整理",
+              "稿件资料：100+条内容，初稿撰写与品牌口径校对",
+              "媒体监测：行业报道、竞品动态、用户评论与AI看板",
+              "效果复盘：注册较前一期+50%，首次专题创建率相对约+15%"
             ]
           }
         ]
       },
       {
-        "id": "project-1",
+        "id": "project-2",
         "no": "02",
-        "title": "用户洞察与品牌推广",
-        "tagline": "营销策划｜品牌内容｜达人协作｜AI复盘",
+        "title": "活动传播与跨境沟通",
+        "tagline": "资料准备｜信息摘要｜现场沟通｜英文协作",
         "items": [
           {
-            "name": "AI资讯产品用户洞察与品牌推广",
-            "meta": "AI Information Product Insights & Brand Promotion",
-            "slug": "ai-news-dashboard",
-            "link": `${import.meta.env.BASE_URL}projects/ai-news-dashboard/case_study.html`,
+            "name": "AI教育产品活动传播与跨境沟通",
+            "meta": "Event Communication & Cross-border Coordination",
+            "slug": "ai-education-partnership",
+            "link": `${import.meta.env.BASE_URL}projects/ai-education-partnership/case_study.html`,
             "tags": [
-              "需求调研：用户反馈与价格问卷，规划分阶段沟通",
-              "品牌内容：100+条内容，协助达人筛选与上线跟踪",
-              "活动执行：线上拉新、线下推广及渠道内容A/B测试",
-              "效果复盘：AI看板；注册较前周+50%，首次专题创建率相对约+15%"
+              "活动传播：宣讲体验、演示资料、现场口径与答疑",
+              "信息整理：100+条反馈，沉淀摘要、FAQ与案例",
+              "内容协作：30+篇内容，东南亚英文沟通及交接",
+              "反馈迭代：10条建议，期间核心功能使用率+30%"
             ]
           }
         ]
@@ -98,19 +98,19 @@ export const WORKS: Record<WorkLanguage, WorksLang> = {
       {
         "id": "project-4",
         "no": "03",
-        "title": "新品上市与渠道传播",
-        "tagline": "消费者洞察｜社媒内容｜上市传播｜渠道协同",
+        "title": "海外内容与本地化传播",
+        "tagline": "当地受众｜英文文案｜渠道口径｜社媒反馈",
         "items": [
           {
-            "name": "ZUS Coffee新品上市与渠道传播",
-            "meta": "ZUS Coffee Product Launch & Channel Communication",
+            "name": "ZUS Coffee海外内容与本地化传播",
+            "meta": "Overseas Content & Localized Communication",
             "slug": "zus-everywhere",
             "link": `${import.meta.env.BASE_URL}projects/zus-everywhere/case_study.html`,
             "tags": [
-              "新品调研：结合消费者偏好与竞品内容提炼卖点",
-              "社媒执行：50条Instagram内容，拍摄剪辑与英文文案",
-              "渠道协同：线上首发及FamilyMart宣传素材与排期",
-              "内容复盘：15+次复盘，协同带动账号粉丝增长1.1w+"
+              "本地调研：马来西亚用户偏好、社媒反馈与竞品表达",
+              "英文内容：50条Instagram，选题、制作与素材整理",
+              "渠道协同：线上首发、FamilyMart资料及发布排期",
+              "持续复盘：15+次复盘，协同账号粉丝增长1.1w+"
             ]
           }
         ]
@@ -130,41 +130,41 @@ export const WORKS: Record<WorkLanguage, WorksLang> = {
     "countLabel": (n: number) => `${n} projects`,
     "sections": [
       {
-        "id": "project-2",
+        "id": "project-1",
         "no": "01",
-        "title": "Product Marketing & Campaign Execution",
-        "tagline": "User Insights · Communication · Materials · Partnerships",
+        "title": "Brand Communication & Media Analysis",
+        "tagline": "Story Planning · Media Materials · Monitoring · AI Reviews",
         "items": [
           {
-            "name": "AI Education Product Marketing & Campaign Execution",
-            "meta": "Research, Product Communication & University Promotion",
-            "slug": "ai-education-partnership",
-            "link": `${import.meta.env.BASE_URL}projects/ai-education-partnership/case_study.html`,
+            "name": "AI Information Product: Brand Communication & Media Analysis",
+            "meta": "From information to clear messages and feedback-led revisions",
+            "slug": "ai-news-dashboard",
+            "link": `${import.meta.env.BASE_URL}projects/ai-news-dashboard/case_study.html`,
             "tags": [
-              "Insights: classified 100+ feedback items to identify needs and barriers",
-              "Communication: 30+ guides, FAQs, tutorials and use cases",
-              "Execution: university events, materials and Southeast Asia partnerships",
-              "Iteration: over 10 suggestions; core-feature usage increased 30% during the period"
+              "Planning: product updates, user cases and event information",
+              "Materials: 100+ posts, initial drafts and brand-message checks",
+              "Monitoring: coverage, competitors, comments and an AI dashboard",
+              "Review: registrations +50% vs prior period; first-topic rate approx. +15% relatively"
             ]
           }
         ]
       },
       {
-        "id": "project-1",
+        "id": "project-2",
         "no": "02",
-        "title": "User Insights & Brand Promotion",
-        "tagline": "Campaign Planning · Content · Creators · AI Reviews",
+        "title": "Event Communication & Cross-border Coordination",
+        "tagline": "Materials · Information Summaries · Events · Working English",
         "items": [
           {
-            "name": "AI Information Product Insights & Brand Promotion",
-            "meta": "From User Needs to Content, Campaigns & Performance Review",
-            "slug": "ai-news-dashboard",
-            "link": `${import.meta.env.BASE_URL}projects/ai-news-dashboard/case_study.html`,
+            "name": "AI Education Product: Events & Cross-border Communication",
+            "meta": "From audience feedback to materials, events and handoff",
+            "slug": "ai-education-partnership",
+            "link": `${import.meta.env.BASE_URL}projects/ai-education-partnership/case_study.html`,
             "tags": [
-              "Research: user feedback and pricing surveys informed messages by user stage",
-              "Content: 100+ posts plus creator screening and launch tracking",
-              "Execution: online acquisition, offline promotion and channel content tests",
-              "Review: AI dashboard; registrations +50% versus prior week, first-topic rate approximately +15% relatively"
+              "Events: presentations, demonstrations, message checks and questions",
+              "Information: 100+ feedback items, summaries, FAQs and cases",
+              "Coordination: 30+ articles and Southeast Asia English communication",
+              "Iteration: 10 recommendations; core-feature usage +30% during the period"
             ]
           }
         ]
@@ -172,18 +172,18 @@ export const WORKS: Record<WorkLanguage, WorksLang> = {
       {
         "id": "project-4",
         "no": "03",
-        "title": "Product Launch & Channel Communication",
-        "tagline": "Consumer Insights · Social Content · Launch · Channels",
+        "title": "Overseas Content & Localized Communication",
+        "tagline": "Local Audiences · English Copy · Channels · Social Feedback",
         "items": [
           {
-            "name": "ZUS Coffee Product Launch & Channel Communication",
-            "meta": "New-Product Messages, Instagram & Retail Communication",
+            "name": "ZUS Coffee: Overseas Content & Localized Communication",
+            "meta": "Malaysian audience insights, English content and weekly reviews",
             "slug": "zus-everywhere",
             "link": `${import.meta.env.BASE_URL}projects/zus-everywhere/case_study.html`,
             "tags": [
-              "Research: consumer preferences and competitor content shaped launch messages",
-              "Content: 50 Instagram posts, shooting, editing and English copy",
-              "Channels: online launch and FamilyMart assets and schedules",
+              "Research: Malaysian preferences, social feedback and competitor messages",
+              "Content: 50 Instagram posts, planning, production and assets",
+              "Channels: online launch and FamilyMart materials and schedules",
               "Review: 15+ reviews; contributed to 11k+ account follower growth"
             ]
           }
@@ -192,7 +192,6 @@ export const WORKS: Record<WorkLanguage, WorksLang> = {
     ]
   }
 }
-
 
 export const WORKS_CONTENT = WORKS
 

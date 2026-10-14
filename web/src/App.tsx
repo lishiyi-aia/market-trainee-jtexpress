@@ -27,13 +27,13 @@ const COPY = {
   en: {
     title: 'About Shiyi',
     paragraphs: [
-      "Shiyi Li · Marketing Trainee applicant and 2027 Master of Marketing candidate. I connect consumer insights with brand content, product launches and campaign execution, supported by channel reviews, AI-assisted dashboards and reusable workflows.",
+      "Shiyi Li · J&T Express Brand Management Trainee applicant and 2027 Master of Marketing candidate. I turn audience feedback into clear brand stories, communication materials and localized English content, using AI-assisted analysis to improve the next round of communication.",
     ],
   },
   zh: {
     title: 'About Shiyi',
     paragraphs: [
-      '李世怡｜市场培训生岗位申请。2027届市场营销硕士，英语可作为工作语言。具备用户洞察、品牌内容、新品推广与活动执行经验，通过渠道复盘和 AI 分析看板，将反馈转化为下一轮营销行动。',
+      '李世怡｜极兔集团品牌管理管培生岗位申请。2027届市场营销硕士，英语可作工作语言。具备对外内容撰写、信息整理与东南亚本地化传播经验，运用 AI 分析看板，将传播反馈转化为下一轮选题、资料与沟通调整。',
     ],
   },
 }
@@ -177,11 +177,11 @@ export default function App() {
         <span className="hero-mark br">+</span>
         <div className="hero-meta hm-tl">
           <span className="hm-name">Shiyi Li 李世怡</span>
-          <span>CONSUMER INSIGHTS · BRAND COMMUNICATION · PRODUCT LAUNCH</span>
+          <span>BRAND COMMUNICATION · MEDIA ANALYSIS · LOCALIZATION</span>
         </div>
         <div className="hero-meta hm-tr">2026</div>
-        <div className="hero-meta hm-bl">Campaign Planning · Channel Review · AI-assisted Marketing</div>
-        <div className="hero-meta hm-right">Marketing Trainee · FineToday</div>
+        <div className="hero-meta hm-bl">English Content · Cross-cultural Communication · AI Analysis</div>
+        <div className="hero-meta hm-right">Brand Management Trainee · J&T Express</div>
       </motion.div>
 
       {/* 全屏胶片噪点蒙层（multiply 混合） */}

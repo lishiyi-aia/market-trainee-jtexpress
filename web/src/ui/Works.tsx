@@ -143,6 +143,26 @@ export default function Works({ lang, innerRef }: { lang: 'en' | 'zh'; innerRef:
   const sections = data.sections
   const count = sections.length
 
+  // 案例页返回时，等 React 挂载与字体就绪后再定位项目区。
+  useEffect(() => {
+    let disposed = false
+    let frame = 0
+    const followWorksHash = () => {
+      if (disposed || window.location.hash !== '#works') return
+      frame = requestAnimationFrame(() => {
+        document.getElementById('works')?.scrollIntoView({ block: 'start', behavior: 'instant' })
+      })
+    }
+    followWorksHash()
+    document.fonts.ready.then(followWorksHash)
+    window.addEventListener('hashchange', followWorksHash)
+    return () => {
+      disposed = true
+      cancelAnimationFrame(frame)
+      window.removeEventListener('hashchange', followWorksHash)
+    }
+  }, [])
+
   // 竖滚 pin 转横移：测量整排卡片的实际可横移距离（px），竖滚进度 → 横移
   const galleryRef = useRef<HTMLDivElement>(null)
   const trackRef = useRef<HTMLDivElement>(null)
@@ -173,7 +193,7 @@ export default function Works({ lang, innerRef }: { lang: 'en' | 'zh'; innerRef:
   const hintOpacity = useTransform(scrollYProgress, [0.85, 1], [1, 0])
 
   return (
-    <section className="works" lang={lang} ref={innerRef}>
+    <section id="works" className="works" lang={lang} ref={innerRef}>
       <div
         className="wk-gallery"
         ref={galleryRef}

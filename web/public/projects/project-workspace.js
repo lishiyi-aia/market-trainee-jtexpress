@@ -71,14 +71,14 @@
   let config;
   if (project === 'zus') {
     config = {
-      title: 'ZUS Coffee', subtitle: '新品上市与渠道传播', number: '03', eyebrow: 'PRODUCT LAUNCH / SOCIAL & RETAIL CHANNELS',
-      ownership: '消费者洞察 · 新品卖点<br>拍摄剪辑 · 英文内容<br>渠道传播 · 上市复盘',
+      title: 'ZUS Coffee', subtitle: '海外内容与本地化传播', number: '03', eyebrow: 'LOCAL AUDIENCES / ENGLISH CONTENT & COMMUNICATION',
+      ownership: '本地受众 · 文化语境<br>英文内容 · 信息核对<br>渠道协同 · 社媒反馈',
       note: '内部后台明细不公开。账号截图与产品资料不代表个人全部作品。',
       steps: [
-        { id: 'research', title: '新品调研', sub: '将用户偏好转成卖点', icon: 'scan-search', sections: ['research', 'overview'] },
-        { id: 'content', title: '社媒内容', sub: '围绕卖点制作与发布', icon: 'images', sections: ['content'] },
-        { id: 'channels', title: '上市传播', sub: '线上首发与门店信息', icon: 'network', sections: ['channels'] },
-        { id: 'review', title: '内容复盘', sub: '反馈与下一步调整', icon: 'chart-no-axes-combined', sections: ['review', 'results'] }
+        { id: 'research', title: '本地受众', sub: '从文化语境提炼卖点', icon: 'scan-search', sections: ['research', 'overview'] },
+        { id: 'content', title: '英文内容', sub: '卖点、视觉与本地表达', icon: 'images', sections: ['content'] },
+        { id: 'channels', title: '渠道协同', sub: '核对信息与发布排期', icon: 'network', sections: ['channels'] },
+        { id: 'review', title: '反馈复盘', sub: '调整下一轮选题与文案', icon: 'chart-no-axes-combined', sections: ['review', 'results'] }
       ],
       metrics: [ ['50', '条 Instagram 内容', '参与制作与发布', 'content'], ['15+', '次内容复盘', '累计完成', 'review'], ['1.1w+', '账号粉丝增长', '项目期账号整体结果', 'results'] ]
     };
@@ -87,18 +87,18 @@
     const productionItems = [...sections.content.children].filter(item => item !== evidence && !item.classList.contains('section-head'));
     evidence.before(production);
     production.append(...productionItems);
-    $('.section-head h2', sections.content).textContent = '内容发布与素材展示';
+    $('.section-head h2', sections.content).textContent = '英文内容与本地化素材';
     const source = $('.hero-source');
     if (source) { source.classList.add('asset-source'); sections.content.append(source); }
     const channelLead = $('.lead p', sections.review).textContent;
-    sections.channels = section('channels', '内容发布，也要接上购买信息', channelLead);
+    sections.channels = section('channels', '线上与门店传播，使用同一套准确信息', channelLead);
     sections.channels.append($('.channel-steps', sections.review));
-    $('.section-head h2', sections.review).textContent = '看完反馈，再决定下一条怎么做';
-    $('.section-head .lead', sections.review).textContent = '每周跟踪内容表现，累计完成15+次复盘，并根据互动反馈调整后续选题、内容形式与发布节奏。';
-    $('.section-head h2', sections.research).textContent = '先决定这条内容要讲什么';
+    $('.section-head h2', sections.review).textContent = '把当地受众反馈带回下一轮表达';
+    $('.section-head .lead', sections.review).textContent = '每周跟踪内容表现与社媒反馈，累计完成15+次复盘；将受众疑问回流到英文文案、门店说明及下一轮本地化选题。';
+    $('.section-head h2', sections.research).textContent = '先了解当地受众，再决定如何表达';
     const researchItems = $$('.research-item', sections.research);
     const topics = researchItems.map((item, i) => ({
-      label: ['用户偏好', '竞品表达', '本次选题'][i], title: $('h3', item).textContent,
+      label: ['当地偏好', '竞品表达', '本地选题'][i], title: $('h3', item).textContent,
       copy: $('p', item).textContent,
       body: `<p class="explorer-takeaway">${$('small', item).textContent}</p>`
     }));
@@ -111,13 +111,13 @@
     const channelExplorer = node('div', 'channel-explorer');
     $('.channel-steps', sections.channels).before(channelExplorer);
     explorer(channelExplorer, 'zus-channel', '渠道传播', [
-      { label: '线上首发', title: '产品信息、文案与发布时间一致', copy: '配合产品线上首发，协助整理宣传素材与发布排期，让产品画面、英文文案和发布信息相互对应。', body: '<dl class="explorer-rows"><div><dt>准备内容</dt><dd>产品素材、英文 caption、hashtag、购买入口。</dd></div><div><dt>核对重点</dt><dd>产品名称、发布主题、链接与时间安排。</dd></div></dl>' },
-      { label: 'FamilyMart', title: '让感兴趣的人知道去哪里购买', copy: '配合 FamilyMart 线下渠道传播，协助整理宣传素材、门店信息、购买入口与发布排期。', body: '<dl class="explorer-rows"><div><dt>准备内容</dt><dd>已确认的门店与渠道说明、对应产品资料。</dd></div><div><dt>核对重点</dt><dd>门店范围、购买信息与发布安排是否一致。</dd></div></dl>' }
+      { label: '线上首发', title: '产品信息、文案与发布时间一致', copy: '配合产品线上首发，核对宣传素材、英文文案与发布排期，让品牌卖点、当地表达和渠道信息相互对应。', body: '<dl class="explorer-rows"><div><dt>准备内容</dt><dd>产品素材、英文 caption、hashtag、购买入口。</dd></div><div><dt>核对重点</dt><dd>产品名称、发布主题、链接与时间安排。</dd></div></dl>' },
+      { label: 'FamilyMart', title: '让线上表达与当地门店信息保持一致', copy: '配合 FamilyMart 线下渠道传播，协助整理宣传素材、门店信息、购买入口与发布排期。', body: '<dl class="explorer-rows"><div><dt>准备内容</dt><dd>已确认的门店与渠道说明、对应产品资料。</dd></div><div><dt>核对重点</dt><dd>门店范围、购买信息与发布安排是否一致。</dd></div></dl>' }
     ]);
     setupZusGallery(evidence);
   } else if (project === 'education') {
     config = {
-      title: 'AI 教育产品', subtitle: '公众号运营与高校活动', number: '03', eyebrow: 'USER EDUCATION / UNIVERSITY EVENTS',
+      title: 'AI 教育产品', subtitle: '活动传播与信息整理', number: '02', eyebrow: 'COMMUNICATION MATERIALS / UNIVERSITY EVENTS',
       ownership: '用户反馈 · 需求整理<br>公众号内容 · 产品资料<br>高校对接 · 现场组织',
       note: '内部反馈原文与数据明细不公开。场景示例为方法整理，不是用户原话。',
       steps: [
@@ -127,7 +127,7 @@
         { id: 'pilot', title: '高校活动', sub: '对接、组织与答疑', icon: 'presentation', sections: ['pilot'] },
         { id: 'results', title: '工作结果', sub: '内容沉淀与建议', icon: 'clipboard-check', sections: ['results'] }
       ],
-      metrics: [ ['100+', '用户反馈', '归类师生与试点用户问题', 'feedback'], ['30+', '使用内容', '指南 / FAQ / 教程 / 案例', 'content'], ['10+', '优化建议', '建议数量不代表全部实施', 'results'], ['0→1', '公众号内容建设', '围绕使用需求组织内容', 'content'] ]
+      metrics: [ ['100+', '用户反馈', '归类师生与试点用户问题', 'feedback'], ['30+', '使用内容', '指南 / FAQ / 教程 / 案例', 'content'], ['10', '优化建议', '建议数量不代表全部实施', 'results'], ['0→1', '公众号内容建设', '围绕使用需求组织内容', 'content'] ]
     };
     sections.resources = section('resources', '把使用问题整理成可查阅的资料', '协同团队整理产品演示资料、FAQ、教师案例及课程方案，为产品培训与宣讲提供内容支持。');
     const resources = node('div', 'resource-explorer');
@@ -154,7 +154,7 @@
     })));
     sections.content.append(node('div', 'content-connection', `${icon('files')}<div><strong>线上说明与培训资料，回应同一批使用问题</strong><p>公众号提供持续查阅的内容，产品资料补充具体步骤与案例。</p></div><a href="#resources">查看产品资料 ${icon('arrow-right')}</a>`));
     const stages = $$('.pilot-stage', sections.pilot);
-    const handoffs = ['高校宣讲与体验安排、师生关注重点', '活动流程、产品演示、FAQ、教师案例及课程材料', '现场组织、使用答疑与师生反馈记录', '后续内容补充与10余项优化建议'];
+    const handoffs = ['高校宣讲与体验安排、师生关注重点', '活动流程、产品演示、FAQ、教师案例及课程材料', '现场组织、使用答疑与师生反馈记录', '资料修订与10条优化建议'];
     const roles = ['对接高校并沟通活动安排。', '安排活动流程，协同产品和业务团队准备材料。', '负责现场组织与使用答疑，记录师生反馈。', '整理问题、补充使用说明，向相关团队提交改进建议。'];
     explorer($('.pilot-stages', sections.pilot), 'education-pilot', '高校活动环节', stages.map((stage, i) => ({ label: $('h3', stage).textContent, title: $('h3', stage).textContent, copy: $('p', stage).textContent, body: `<dl class="explorer-rows"><div><dt>对应产出</dt><dd>${handoffs[i]}</dd></div><div><dt>我的职责</dt><dd>${roles[i]}</dd></div></dl>` })));
     const path = $('.usage-path', sections.feedback);
@@ -165,17 +165,17 @@
     pathHeading.remove();
   } else {
     config = {
-      title: 'AI 教育产品', subtitle: '市场推广与活动执行', number: '01', eyebrow: 'USER INSIGHTS / CONTENT & EVENTS',
-      ownership: '用户洞察 · 卖点提炼<br>公众号内容 · 活动物料<br>现场答疑 · 市场合作',
+      title: 'AI 教育产品', subtitle: '活动传播与跨境沟通', number: '02', eyebrow: 'EVENT COMMUNICATION / CROSS-BORDER COORDINATION',
+      ownership: '反馈归类 · 信息摘要<br>内容资料 · 现场口径<br>活动传播 · 英文协作',
       note: '展示已脱敏合作记录与活动照片。结构示意为方法整理；使用率为实习期间整体表现。',
       steps: [
-        { id: 'journey', title: '用户洞察', sub: '从使用问题到传播重点', icon: 'scan-search', sections: ['journey', 'overview'] },
-        { id: 'followup', title: '内容与物料', sub: '线上说明与现场资料', icon: 'notebook-pen', sections: ['followup'] },
-        { id: 'collaboration', title: '推广执行', sub: '高校活动与市场合作', icon: 'presentation', sections: ['collaboration'] },
-        { id: 'evidence', title: '过程材料', sub: '活动背景与合作记录', icon: 'images', sections: ['evidence'] },
-        { id: 'outcome', title: '结果与迭代', sub: '反馈回到下一轮推广', icon: 'chart-no-axes-combined', sections: ['outcome'] }
+        { id: 'journey', title: '信息整理', sub: '反馈归类与摘要提炼', icon: 'scan-search', sections: ['journey', 'overview'] },
+        { id: 'followup', title: '稿件与资料', sub: '场景案例、FAQ与活动口径', icon: 'notebook-pen', sections: ['followup'] },
+        { id: 'collaboration', title: '沟通协作', sub: '高校执行与跨境交接', icon: 'presentation', sections: ['collaboration'] },
+        { id: 'evidence', title: '过程材料', sub: '活动照片与合作背景', icon: 'images', sections: ['evidence'] },
+        { id: 'outcome', title: '复盘与修订', sub: '反馈回到资料和后续试点', icon: 'chart-no-axes-combined', sections: ['outcome'] }
       ],
-      metrics: [['100+', '条用户反馈', '按场景与问题归类', 'journey'], ['30+', '篇使用内容', '指南 / FAQ / 教程 / 案例', 'followup'], ['10余', '项优化建议', '建议数量不代表全部上线', 'outcome'], ['+30%', '核心功能使用率', '实习期间整体表现', 'outcome']]
+      metrics: [['100+', '条用户反馈', '按场景与问题归类', 'journey'], ['30+', '篇使用内容', '指南 / FAQ / 教程 / 案例', 'followup'], ['10', '条优化建议', '建议数量不代表全部上线', 'outcome'], ['+30%', '核心功能使用率', '实习期间整体表现', 'outcome']]
     };
     const stages = $$('.stage', sections.journey).map(stage => ({
       label: $('h3', stage).textContent, title: $('h3', stage).textContent, copy: $('p', stage).textContent,
@@ -184,12 +184,12 @@
     const timeline = $('.timeline', sections.journey);
     const timelineExplorer = node('div', 'partnership-stages');
     timeline.replaceWith(timelineExplorer);
-    explorer(timelineExplorer, 'partnership-stage', '用户洞察与推广闭环', stages);
-    const handoffNotes = ['需求确认 → 材料准备 → 宣讲体验 → 现场答疑与反馈。', '用户任务 → 对应功能 → 演示、FAQ与场景材料。', '活动安排 → 分工执行 → 问题记录 → 后续跟进。', '当地需求 → 双方分工 → 协议签署 → 项目交接。'];
+    explorer(timelineExplorer, 'partnership-stage', '信息整理与传播闭环', stages);
+    const handoffNotes = ['需求确认 → 材料准备 → 宣讲体验 → 现场答疑与反馈。', '用户任务 → 对应功能 → 演示、FAQ与场景材料。', '活动安排 → 分工执行 → 问题记录 → 后续跟进。', '英文沟通 → 需求与分工确认 → 协议签署 → 资料与项目交接。'];
     const teamItems = $$('.team', sections.collaboration).map((team, i) => ({ label: $('h4', team).textContent, title: $('h4', team).textContent, copy: $('p', team).textContent, body: `<p class="explorer-takeaway">${handoffNotes[i]}</p>` }));
     const teamExplorer = node('div', 'team-explorer');
     $('.collaboration-map', sections.collaboration).replaceWith(teamExplorer);
-    explorer(teamExplorer, 'partnership-team', '推广与合作执行', teamItems);
+    explorer(teamExplorer, 'partnership-team', '活动传播与跨境协作', teamItems);
     const rows = $$('.followup-row:not(.header)', sections.followup).map(row => ({
       label: $('h3', row).textContent.replace(/^\d+\s*/, ''), title: $('h3', row).textContent.replace(/^\d+\s*/, ''),
       copy: $$('p > span:last-child', row)[0].textContent,
@@ -253,7 +253,7 @@
   if (project !== 'partnership') $('.section-head', sections.results).after(resultMetrics);
   const resultLoop = node('a', 'review-loop', `${icon('corner-up-left')}<span><strong>${project === 'zus' ? '将复盘带回下一条内容' : '将使用反馈带回内容与资料'}</strong><small>${project === 'zus' ? '核对信息 → 调整选题与表达 → 发布后继续观察' : '使用问题 → 内容更新 / 产品建议 → 继续确认'}</small></span>${icon('arrow-right')}`);
   resultLoop.href = `#${config.steps[0].id}`;
-  if (project === 'partnership') resultLoop.querySelector('span').innerHTML = '<strong>把反馈带回下一轮推广</strong><small>需求归类 → 卖点与内容 → 宣讲体验 → 复盘改进 → 再收集反馈</small>';
+  if (project === 'partnership') resultLoop.querySelector('span').innerHTML = '<strong>把现场反馈带回资料修订与后续试点</strong><small>反馈归类 → 信息摘要与资料 → 宣讲及跨境协作 → 复盘修订 → 后续试点</small>';
   sections[resultId].append(resultLoop);
 
   let active = 0;

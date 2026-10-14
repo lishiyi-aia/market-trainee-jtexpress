@@ -10,5 +10,5 @@ export default defineConfig({
   base: './',
   cacheDir: './.vite-cache',
   plugins: [react()],
-  server: { host: true, port: 5198 },
+  server: { host: true, port: 5206 },
 })
